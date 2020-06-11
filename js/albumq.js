@@ -42,12 +42,6 @@ var app = angular.module("albumq", ['ngRoute', 'ngAnimate'])
       };
       directive.controller = function ($scope) {
 
-         // Fixes outputs for iOS
-         function dateFixer(s) {
-            let str = s.replace(' ', 'T');
-            return str;
-         }
-
          $scope.delete = function () {
             $scope.remove()($scope.album.id);
          };
@@ -59,7 +53,7 @@ var app = angular.module("albumq", ['ngRoute', 'ngAnimate'])
             );
          };
 
-         $scope.release = new Date(dateFixer($scope.album.release));
+         $scope.release = new Date($scope.album.release);
          
          $scope.pad = function (number) {
             return (number < 10) ? "0" + number : number;
@@ -88,7 +82,7 @@ var app = angular.module("albumq", ['ngRoute', 'ngAnimate'])
 
          $scope.updated = new Date(dateFixer($scope.album.last_update));
 
-         $scope.release = new Date(dateFixer($scope.album.release));
+         $scope.release = new Date($scope.album.release);
 
          $scope.delete = function () {
             $scope.remove()($scope.album.id);
