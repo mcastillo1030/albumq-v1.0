@@ -1,0 +1,31 @@
+<!-- Destroy session variable if redirected to login? -->
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="author" content="Marlon Castillo">
+      <meta name="description" content="AlbumQ is the perfect app to manage and record your thoughts during music discovery.">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>AlbumQ - Log In!</title>
+      <link rel="stylesheet" href="https://use.typekit.net/qcf7iod.css">
+      <link href="display.css" rel="stylesheet" type="text/css">
+   </head>
+   <body>
+      <div id="index-body">
+         <div id="index-main">
+            <div id="index-content" class="album-tile">
+               <h1>AlbumQ</h1>
+               <img src="images/index-logo.svg" alt="The AlbumQ logo is composed of the word album and the letter Q made up of a record with a tail.">
+               <p>For those moments when you need a quick way to organize your music and your thoughts.</p>
+               <h2>Sign in with Spotify</h2>
+               <form action="scripts/auth.php" method="POST">
+                  <button class="attention" type="submit" name="submit" id="index-submit" value="Sign in">Sign in</button>
+               </form>
+            </div>
+            <footer>
+               <p>Designed with <span id="heart-img"><img src="images/heart-emoji.png" alt="The iOS emojy for heart in red"></span> by <a href="http://www.marloncastillo.dev">Marlon Castillo</a></p>
+            </footer>
+         </div><!-- end index-main-->
+      </div>
+   </body>
+</html>

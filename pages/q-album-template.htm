@@ -1,0 +1,28 @@
+   <div class="tile-header">
+      <img src="{{ album.artwork[300] }}" alt="Album cover for {{ album.title }}.">
+      <h3>{{ album.title }}</h3>
+      <p>{{ album.artist }}</p>
+   </div>
+   <div class="tile-body">
+      <table>
+         <tr>
+            <th>#</th>
+            <th>Name</th>
+         </tr>
+         <tr data-ng-repeat="track in album.tracks">
+            <td class="track-number" data-ng-bind="pad(track.track_number)"></td>
+            <td class="track-name">{{ track.track_name }}</td>
+         </tr>
+      </table>
+      <div class="copyright-bucket">
+         <p>&copy;{{ release | date: "yyyy" }} {{ album.label }}</p>
+      </div>
+   </div>
+   <div class="tile-footer">
+      <div class="card-rating-group" data-rating-group data-action="rate"></div>
+      <div class="footer-buttons">
+         <a class="tile-more-btn attention" href="javascript:void(0)" data-options-expand-btn></a>
+         <a href="javascript:void(0);" data-ng-click="delete()">Remove</a>
+         <a href="javascript:void(0);" data-rating-expand-btn>Rate</a>
+      </div>
+   </div><!-- end album tile-->

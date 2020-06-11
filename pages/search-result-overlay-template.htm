@@ -1,0 +1,32 @@
+<div class="tile-header">
+   <div id="overlay-header-inner">
+      <div id="overlay-details">
+         <h3 id="overlay-result-title">{{ album.title }}</h3>
+         <p id="overlay-result-artist">{{ album.artist }}</p>
+      </div>
+      <img id="overlay-img" src="{{ album.artwork[300] }}" alt="Album cover art for {{ album.title }}">
+   </div>
+</div>
+<div class="overlay-tile-body">
+   <table>
+      <tr>
+         <th>#</th>
+         <th>Name</th>
+      </tr>
+      <tr data-ng-repeat="x in album.tracks">
+         <td class="track-number">{{ x.track_number }}</td>
+         <td class="track-name">{{ x.track_name }}</td>
+      </tr>
+   </table>
+   <div class="overlay-copyright-bucket">
+      <p>&copy;{{ release | date: "yyyy" }} {{ album.label }}</p>
+   </div>
+</div>
+<div class="tile-footer overlay-footer">
+   <div class="card-rating-group" data-rating-group data-action="r"></div>
+   <div class="result-footer-buttons" >
+      <a href="javascript:void(0)" data-ng-click="cancel($event)" id="modal-close">Close</a>
+      <a href="javascript:void(0)" data-rating-expand-btn>Rate</a>
+      <a href="javascript:void(0);" data-ng-click="q($event)" class="attention overlay-btn" id="q-btn">Queue</a>
+   </div>
+</div>

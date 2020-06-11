@@ -1,0 +1,38 @@
+<div id="logo-container">
+   <picture>
+      <source srcset="images/logo.svg" media="(min-width: 400px)">
+      <img id="logo" src="images/logo.svg" alt="AlbumQ logo consisting of the word album in lowercase and the Q stylized as a vynil record player.">
+   </picture>
+</div>
+<div class="content">
+   <div id="user-bucket" class="album-tile">
+      <div id="user-details">
+         <h2 data-ng-bind="username()" class="body-header"></h2>
+      </div>
+      <div id="user-options">
+         <a href="javascript:void(0);" id="delete-link" class="attention" data-ng-click="deleteAccount()">Delete my Account</a>
+         <a href="javascript:void(0);" id="logout-link" data-ng-click="logout()" class="attention">Logout</a>
+      </div>
+   </div>
+   <dl>
+      <dt>What is AlbumQ?</dt>
+      <dd>AlbumQ is an app designed to orgnize your music and your thoughts during music discovery. You'll find the app useful if your main method of discovery is by listening to full records (you know, like they used to do when all they had was vynil?). This app will allow you to add an album you're interested in listening to your queue. From there, you can record your thoughts on each album as you listen, or go back and change your mind on re-listens.</dd>
+      <dt>Privacy, content, and copyright disclosures</dt>
+      <dd>
+         <p>This app minimizes the information it needs to store in order to protect as much of your privacy as possible. To that extent, the only information that is requested and stored about you from the Spotify service is your Display Name. You can learn more about how Spotify handles your user data by checking out their <a target="_blank" href="https://www.spotify.com/us/legal/privacy-policy/">Privacy Policy</a>.</p>
+         <p>All of the music information and content displayed in this application is obtained through the <a target="_blank" href="https://developer.spotify.com/">Spotify Web API</a>. The Developer does not claim ownership of any images and intellectual property of others used in this application. Said property is copyrighted by their individual owners and used for illustration and demonstrative purposes only. Spotify, the Spoitfy Marks, and Spotify Content are used in accordance with the <a target="_blank" href="https://developer.spotify.com/terms/">Developer Terms & Conditions</a>.</p>
+         <p>Powered by <a href="https://www.spotify.com/" target="_blank" id="spotify-logo-ctr"><img id="spotify-logo" src="images/Spotify_Logo_RGB_Black.png" alt="The Spotify logo."></a></p>
+      </dd>
+      <dt>Image and icon credits</dt>
+      <dd>Home, search, gear, and check-mark icons from <a target="_blank" href="https://icons8.com">Icons8</a>. Vinyl splash photo by MARK S. on <a target="_blank" href="https://unsplash.com/@blocks">Unsplash</a>. Album queue icon by <a target="_blank" href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>, retrieved from <a href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a>. Logo uses a modified version of the vynil icon by <a target="_blank" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>, retrieved from <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a>. </dd>
+      <dt>About the developer</dt>
+      <dd>
+         <p>This app was developed by <a target="_blank" href="https://www.marloncastillo.dev/">Marlon Castillo</a> as a passion project. He loves discovering new music, and has shifted towards listening to full albums at a time in order to gain an impression of the music as a whole. Little by little, he'd record little bits and pieces of information like <span class="italic">"I really liked this one song,"</span> or, <span class="italic">"I liked this lyric because..."</span>. As the notes grew, the whole process became cumbersome and inefficient, so he decided as a developer to do something about it. This app is the fruit of that labor.</p>
+         <p>The app makes use of the Spotify Web API for content loading, and it relies on PHP and AngularJS to make it a simple-to-use Single Page Application (SPA).</p>
+      </dd>
+   </dl>
+   <p><a href="https://github.com/mcastillo1030/albumq" target="_blank" id="gh-icon"><img src="images/github-icon.svg" alt="The GitHub social icon."></a></p>
+   <div id="delete-overlay" data-ng-click="hide($event)" data-ng-if="showModal">
+      <div data-delete-modal id="delete-modal" class="album-tile"></div>
+   </div>
+</div><!-- end content -->

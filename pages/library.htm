@@ -1,0 +1,22 @@
+<div class="content">
+   <h2 class="body-header">Your Rated Library</h2>
+   <div id="library-controls">
+      <form id="library-form">
+         <div class="library-form-group">
+            <label for="library-search-box">Search your library</label>
+            <input type="text" name="library-search-box" id="library-search-box" placeholder="Search..." data-ng-model="query">
+         </div>
+         <div class="library-form-group">
+            <label for="library-sort-drop">Sort by:</label>
+            <select id="library-sort-drop" data-ng-model="sortType">
+               <option data-ng-repeat="option in sortOptions" data-ng-value="{{option.value}}">{{ option.name }}</option>
+            </select>
+         </div>
+      </form>
+   </div>
+   <div id="library-grid">
+      <div class="album" data-ng-repeat="album in r() | filter: query | orderBy: album:false:sortType">
+         <div data-rated-album-card data-album="album" data-remove="libraryRemove" data-update="libraryUpdate" class="album-tile"></div>
+      </div>
+   </div>
+</div> <!-- end content -->

@@ -1,0 +1,22 @@
+<div class="content" id="dashboard">
+   <div class="dashboard-row">
+      <h2 class="body-header">Up Next...</h2>
+      <div class="albums-container">
+         <ul class="full">
+            <li  data-ng-repeat="album in q()" data-q-album-card data-album="album" data-remove="deleteFromQ" data-move="moveToR" class="album-tile">
+               <li data-ng-if="q().length === 0" class="album-tile">Nothing to show. Get started by searching for an album!</li>
+            </li> <!-- end list item -->
+         </ul><!-- end unordered list-->
+      </div><!-- end albums-container -->
+   </div><!-- end dashboard row-->
+   <div class="dashboard-row">
+      <h2 class="body-header">Recently Rated</h2>
+      <div class="albums-container">
+         <ul class="full">
+            <li  data-ng-repeat="album in r() | limitTo : 10 | orderBy: -album.last_update" data-rated-album-card data-album="album" data-remove="deleteFromR" data-update="updateRating" class="album-tile">
+            </li> <!-- end list item -->
+            <li data-ng-if="r().length === 0" class="album-tile">Nothing to show. Rate an album to see some action!</li>
+         </ul><!-- end unordered list-->
+      </div> <!-- end albums container-->
+   </div><!-- end dashboard row -->
+</div><!-- end content--> 

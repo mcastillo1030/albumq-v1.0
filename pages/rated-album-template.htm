@@ -1,0 +1,33 @@
+<div class="tile-header">
+   <img src="{{ album.artwork[300] }}" alt="Album cover for {{ album.title }}.">
+   <h3>{{ album.title }}</h3>
+   <p>{{ album.artist }}<p>
+</div>
+<div class="tile-body">
+   <div class="body-rating" data-ng-show="!ratingGroupVisible">
+      <p>Rating: <span class="album-rating" data-ng-bind="album.rating"></span> / 10</p>
+      <p>Comments: <span class="album-comment" data-ng-bind="album.comments"></span></p>
+      <p>Last Updated: <span class="album-update" data-ng-bind="updated | date: 'short'"></span></p>
+   </div>
+   <table>
+      <tr>
+         <th>#</th>
+         <th>Name</th>
+      </tr>
+      <tr data-ng-repeat="track in album.tracks">
+         <td class="track-number" data-ng-bind="pad(track.track_number)"></td>
+         <td class="track-name">{{ track.track_name }}</td>
+      </tr>
+   </table>
+   <div class="copyright-bucket">
+      <p>&copy;{{ release | date: "yyyy" }} {{ album.label }}</p>
+   </div>
+</div>
+<div class="tile-footer">
+   <div class="card-rating-group"  data-rating-group data-action="rate"  data-rate="album.rating" data-comment="{{ album.comments }}"></div>
+   <div class="footer-buttons" >
+      <a href="javascript:void(0);" class="tile-more-btn attention" data-options-expand-btn></a>
+      <a href="javascript:void(0);" data-ng-click="delete()">Remove</a>
+      <a href="javascript:void(0);" data-rating-expand-btn>Update</a>
+   </div>
+</div>

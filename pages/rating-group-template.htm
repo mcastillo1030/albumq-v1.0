@@ -1,0 +1,15 @@
+<form name="newRating" >
+   <span data-ng-show="newRating.rating.$invalid || newRating.rating.$untouched">Rating is required</span>
+   <div class="rating-form-group">
+      <label for="rating">Rating:</label>
+      <input type="number" min="0" max="10" step="0.1" name="rating" inputmode="numeric" pattern="^[0-9](\.[0-9])?$|^10$" data-ng-model="rating" required>
+   </div>
+   <div class="rating-form-group">
+      <label for="comment">Comments</label>
+      <textarea  rows="5" cols="33" name="comment" data-ng-model="comment"></textarea>
+   </div>
+   <div class="rating-form-group">
+      <button value="Cancel" data-rating-shrink-btn data-type="cancel">Cancel</button>
+      <button value="Submit" type="submit" class="attention" data-rating-shrink-btn data-type="submit" data-input="{{ rating }}" data-submit="save">Submit</button>
+   </div>
+</form>

@@ -1,0 +1,20 @@
+<div class="content">
+   <div id="search-page-loader" data-ng-if="isLoading">
+      <img src="images/loading.gif" alt="A friendly spinner in the sape of a vinyl record">
+   </div>
+   <form id="search-form">
+      <label for="search-input" data-ng-hide="true">Search for an album:</label>
+      <input type="text" placeholder="Search for an album" name="search-input" data-ng-model="query" id="search-input" data-ng-change="clear()" >
+      <button type="submit" name="search-submit" id="search-submit" value="Search" data-ng-click="search($event)" class="attention">Search</button>
+   </form>
+   <ul id="search-result-container">
+      <li class="search-result" data-ng-repeat="x in results" data-ng-click="enlarge(x.id)" data-search-result>
+      </li>
+      <li class="search-result" data-ng-if="noResults" id="no-results">
+         <p>No results</p>
+      </li>
+   </ul>
+   <div id="search-result-overlay" data-ng-if="showEnlarged" data-ng-click="hide($event)"> <!-- hide with ng-if -->
+      <div data-search-result-overlay album="selected" id="expanded-result" data-queue="addQ" data-rated="addR" class="album-tile"></div>
+   </div><!-- end result overlay-->
+</div><!-- end content div -->
